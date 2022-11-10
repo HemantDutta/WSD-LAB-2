@@ -28,3 +28,25 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+#canvas_container {
+    background-color: #0d0a66;
+    width: 98.4%;
+}
+
+.mid-layer_3 {
+    background-image: url("../assets/spacer_3.svg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.myCanvas {
+    height: 400px;
+    width: 500px;
+    border: 1px solid black;
+    border-radius: 20px;
+    transform: none;
+    transition: 0.4s;
+}
+
