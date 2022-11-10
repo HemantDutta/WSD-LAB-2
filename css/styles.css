@@ -8,14 +8,22 @@ body {
 
 .spacer{
     aspect-ratio: 1920/100;
-    width: 100%;
+    width: 98.4%;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    margin-left: 15px;
 }
 
 .mid-layer{
     background-image: url("assets/WSD_lab_2_spacer.svg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mid-layer_2 {
+    background-image: url("../assets/spacer_2.svg");
     display: flex;
     justify-content: center;
     align-items: center;
