@@ -42,7 +42,7 @@
 <!--Header End-->
 <!--Video Section-->
 <section id="video">
-    <div class="container-fluid d-flex p-5" style="background-color: #432C7A; width: 98.4%">
+    <div class="container-fluid d-flex p-5" style="background-color: #432C7A; width: 100vw">
         <div class="row align-items-center">
             <div class="col-lg-6 col-md-6 col-sm-12">
                 <div class="text-section px-5 mt-5">
@@ -52,7 +52,7 @@
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12">
                 <div class="video-section px-5 mt-5">
-                    <video src="assets/2nd_bg.mp4" height="360px" width="640px" autoplay loop></video>
+                    <video src="assets/2nd_bg.mp4" height="auto" width="100%" autoplay loop></video>
                 </div>
             </div>
         </div>
@@ -64,7 +64,7 @@
 <!--Spacer End-->
 <!--Audio Section-->
 <section id="audio">
-    <div class="container-fluid d-flex p-5 flex-column" style="background-color: #80489C; width: 98.4%">
+    <div class="container-fluid d-flex p-5 flex-column" style="background-color: #80489C; width: 100vw">
         <div class="row">
             <div class="col-lg-12">
                 <div class="aud-head d-flex flex-column align-items-center">
@@ -88,16 +88,18 @@
 <div class="spacer mid-layer_2"></div>
 <!--GeoLocation-->
 <section id="geo_loc">
-    <div class="container-fluid" style="background-color: #FF8FB1; width: 98.4%">
+    <div class="container-fluid" style="background-color: #FF8FB1; width: 100vw">
         <div class="row">
-            <div class="col-lg-12 col-sm-12 col-md-12">
+            <div class="col-lg-12">
                 <div class="geo-head" style="display: grid; place-items: center">
                     <h3>Want to see something interesting?</h3>
                     <h5>We can show you your exact location ;)</h5>
                     <button class="btn btn-outline-dark mt-5" onclick="getLocation()">Click Me!</button>
-                    <div id="demo" style="width: 800px; height: 600px; margin-top: 100px">
+                </div>
+            </div>
+            <div class="col-lg-12 d-flex align-items-center justify-content-center">
+                <div id="demo" style="width: 800px; height: 600px; margin-top: 100px">
 
-                    </div>
                 </div>
             </div>
         </div>
@@ -134,7 +136,7 @@
 <div class="spacer mid-layer_4"></div>
 <!--HTML 5 Form Elements-->
 <section id="html5_form">
-    <div class="container-fluid html5_form">
+    <div class="container-fluid html5_form d-flex flex-column justify-content-center align-items-center">
         <div class="row">
             <div class="col-lg-12" style="display: grid; place-items: center">
                 <h3 class="text-light">Latest HTML 5 Form Elements</h3>
@@ -176,7 +178,7 @@
                     <h4>Color Input Type</h4>
                     <label for="color" style="text-align: center">It allows the user to select a color from the color picker. <br> <span class="text-primary">Have some changing the color of this form!</span></label>
                     <input type="color" id="color" value="#252525">
-                    <button class="mt-3 btn btn-outline-dark" onclick="changeColor()" type="button">Change Color</button> //changing form color
+                    <button class="mt-3 btn btn-outline-dark" onclick="changeColor()" type="button">Change Color</button>
                 </div>
                 <div class="col-lg-12 mt-5 html5_form_elements">
                     <h4>Submit Button</h4>
