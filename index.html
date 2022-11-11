@@ -9,24 +9,30 @@
 <body>
 <!--Header-->
 <header>
-    <div class="container-fluid">
-        <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
+    <div class="container-fluid fixed-top">
+        <nav class="navbar navbar-dark navbar-expand-lg" style="background-color: #6C4AB6" id="navbar">
             <div class="navbar-brand">
                 <h1>Freelance Platform</h1>
             </div>
             <div class="collapse navbar-collapse">
                 <div class="navbar-nav mr-auto">
                     <div class="nav-item active">
-                        <a href="#" class="nav-link">Home</a>
+                        <a href="#" class="nav-link" onclick="scrollWindow()">Home</a>
                     </div>
                     <div class="nav-item">
-                        <a href="#" class="nav-link">Find Work</a>
+                        <a href="#video" class="nav-link">Video Section</a>
                     </div>
                     <div class="nav-item">
-                        <a href="#" class="nav-link">Contact Us</a>
+                        <a href="#audio" class="nav-link">Audio Section</a>
                     </div>
                     <div class="nav-item">
-                        <a href="#" class="nav-link">About</a>
+                        <a href="#geo_loc" class="nav-link">Geolocation</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#canvas" class="nav-link">Canvas Section</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#html5_form" class="nav-link">HTML 5 Inputs</a>
                     </div>
                 </div>
             </div>
@@ -36,12 +42,12 @@
 <!--Header End-->
 <!--Video Section-->
 <section id="video">
-    <div class="container-fluid d-flex p-5" style="background-color: #1d2124; width: 98.4%">
+    <div class="container-fluid d-flex p-5" style="background-color: #432C7A; width: 98.4%">
         <div class="row align-items-center">
             <div class="col-lg-6 col-md-6 col-sm-12">
                 <div class="text-section px-5 mt-5">
-                    <h1 class="text-success">Hey There! Welcome to the Greatest Freelance Platform on the entire Internet!</h1>
-                    <h2 class="text-light">Let us introduce ourselves to you!</h2>
+                    <h1 class="text-light">Hey There! Welcome to the Greatest Freelance Platform on the entire Internet!</h1>
+                    <h2 class="text-muted">Let us introduce ourselves to you!</h2>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12">
@@ -58,7 +64,7 @@
 <!--Spacer End-->
 <!--Audio Section-->
 <section id="audio">
-    <div class="container-fluid d-flex p-5 flex-column" style="background-color: #383b3f; width: 98.4%">
+    <div class="container-fluid d-flex p-5 flex-column" style="background-color: #80489C; width: 98.4%">
         <div class="row">
             <div class="col-lg-12">
                 <div class="aud-head d-flex flex-column align-items-center">
@@ -82,7 +88,7 @@
 <div class="spacer mid-layer_2"></div>
 <!--GeoLocation-->
 <section id="geo_loc">
-    <div class="container-fluid" style="background-color: #2aff4d; width: 98.4%">
+    <div class="container-fluid" style="background-color: #FF8FB1; width: 98.4%">
         <div class="row">
             <div class="col-lg-12 col-sm-12 col-md-12">
                 <div class="geo-head" style="display: grid; place-items: center">
@@ -104,21 +110,84 @@
     <div class="container-fluid" id="canvas_container">
         <div class="row">
             <div class="col-lg-12 mt-5" style="display: grid; place-items: center">
-                <h3 class="text-light">Lets work with html 5 canvas now</h3>
+                <h3 class="text-dark">Lets work with html 5 canvas now</h3>
             </div>
             <div class="col-lg-12 d-flex justify-content-around align-items-center">
-                <img src="assets/img_5.jpg" alt="" class="mt-5" id="canvas_img">
-                <canvas class="myCanvas mt-5" id="myCanvas"></canvas>
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <img src="assets/img_5.jpg" alt="" class="mt-5" id="canvas_img">
+                    </div>
+                    <div class="col-lg-6">
+                        <canvas class="myCanvas mt-5" id="myCanvas"></canvas>
+                    </div>
+                </div>
             </div>
             <div class="col-lg-12 mt-5" style="display: grid; place-items: center">
                 <h5 class="text-muted" id="canvas_text">Click this button to place the image inside the canvas!</h5>
-                <button class="btn btn-outline-light" onclick="canvasMove()" id="place">Place It!</button>
-                <button class="btn btn-outline-light mt-2" onclick="canvasRemove()" disabled id="remove">Remove It!</button>
+                <button class="btn btn-outline-dark" onclick="canvasMove()" id="place">Place It!</button>
+                <button class="btn btn-outline-dark mt-2" onclick="canvasRemove()" disabled id="remove">Remove It!</button>
             </div>
         </div>
     </div>
 </section>
 <!--Canvas End-->
+<div class="spacer mid-layer_4"></div>
+<!--HTML 5 Form Elements-->
+<section id="html5_form">
+    <div class="container-fluid html5_form">
+        <div class="row">
+            <div class="col-lg-12" style="display: grid; place-items: center">
+                <h3 class="text-light">Latest HTML 5 Form Elements</h3>
+            </div>
+        </div>
+        <form action="" class="html5_form_content mb-5" id="html5_form_content">
+            <div class="row">
+                <div class="col-lg-4 mt-2 html5_form_elements">
+                    <h4>Email Input Type</h4>
+                    <label for="email">This input type allows you to enter your email and also does validation</label>
+                    <input type="email" name="email" id="email" placeholder="Enter your email" class="input-group">
+                </div>
+                <div class="col-lg-4 mt-2 html5_form_elements">
+                    <h4>Tel Input Type</h4>
+                    <label for="tel">It allows the user to enter the phone number with a specific pattern.</label>
+                    <input type="tel" name="tel" id="tel" class="input-group" pattern="\d{10}$" placeholder="Enter a 10 digit phone number">
+                </div>
+                <div class="col-lg-4 mt-2 html5_form_elements">
+                    <h4>URL Input Type</h4>
+                    <label for="url">It allows the user to enter a website URL</label>
+                    <input type="url" name="url" id="url" class="input-group" placeholder="Enter a URL">
+                </div>
+                <div class="col-lg-4 mt-5 html5_form_elements">
+                    <h4>Search Input Type</h4>
+                    <label for="search">It's a text field for entering a search string</label>
+                    <input type="search" name="search" id="search" class="input-group" placeholder="Search">
+                </div>
+                <div class="col-lg-4 mt-5 html5_form_elements">
+                    <h4>Range Input Type</h4>
+                    <label for="range">It allows the user to range the value with the slider.</label>
+                    <input type="range" id="range" class="custom-range">
+                </div>
+                <div class="col-lg-4 mt-5 html5_form_elements">
+                    <h4>Number Input Type</h4>
+                    <label for="number">It allows the user to enter a numeric value with the increase and decrease arrow.</label>
+                    <input type="number" name="number" id="number" class="input-group">
+                </div>
+                <div class="col-lg-12 mt-5 html5_form_elements">
+                    <h4>Color Input Type</h4>
+                    <label for="color" style="text-align: center">It allows the user to select a color from the color picker. <br> <span class="text-primary">Have some changing the color of this form!</span></label>
+                    <input type="color" id="color" value="#252525">
+                    <button class="mt-3 btn btn-outline-dark" onclick="changeColor()" type="button">Change Color</button>
+                </div>
+                <div class="col-lg-12 mt-5 html5_form_elements">
+                    <h4>Submit Button</h4>
+                    <label for="sub_btn" style="text-align: center">By pressing this button, HTML 5's internal validation will activate and all the different input types will <br> validate their inputs.</label>
+                    <button type="submit" class="btn btn-outline-dark" id="sub_btn">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+<!--HTML 5 Form Elements End-->
 <!--Scripts-->
 <script src="js/jquery-3.6.0.js"></script>
 <script src="js/bootstrap.js"></script>

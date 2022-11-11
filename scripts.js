@@ -55,8 +55,11 @@ function canvasMove() {
     let can = document.getElementById('myCanvas');
     let ctx = can.getContext("2d");
     let img = document.getElementById('canvas_img');
+    ctx.imageSmoothingEnabled = false;
     ctx.drawImage(img, 10, 10, 280, 130);
-    // can.style.transform = "translateX(-10%)";
+    if(window.innerWidth > 992){
+        can.style.transform = "translateX(-54%)";
+    }
     img.style.display = "none";
     document.getElementById('place').setAttribute("disabled", "");
     document.getElementById('remove').removeAttribute("disabled");
@@ -68,8 +71,40 @@ function canvasRemove() {
     let can = document.getElementById('myCanvas');
     let ctx = can.getContext("2d");
     ctx.clearRect(0, 0, can.width, can.height);
+    can.style.transform = "translateX(0%)";
     document.getElementById('canvas_img').style.display = "block";
     document.getElementById('remove').setAttribute("disabled", "");
     document.getElementById('place').removeAttribute("disabled");
     document.getElementById('canvas_text').innerText = "Click this button to place the image!"
 }
+
+function changeColor() {
+    let color = document.getElementById("color").value;
+    let form  = document.getElementById("html5_form_content");
+    form.style.background = color;
+    if(color == "#000000") {
+        form.style.color = "white";
+    }
+    if(color == "#ffffff") {
+        form.style.color = "black";
+    }
+}
+
+function scrollWindow() {
+    if(window.scrollY != 0) {
+        setTimeout(function () {
+            window.scrollTo(0, window.scrollY - 50);
+            scrollWindow();
+        }, 10);
+    }
+};
+
+
+$(window).scroll(function () {
+    if($(window).scrollTop() >= 50) {
+        $('#navbar').css('background-color', '#6C4AB6');
+    }
+    else {
+        $('#navbar').css('background-color', 'transparent');
+    }
+})
