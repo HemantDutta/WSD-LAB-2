@@ -1,3 +1,5 @@
+
+
 //Getting div element for displaying location
 let x = document.getElementById("demo"); //when using getElementById, no need to place a # before the id name
 
@@ -10,16 +12,12 @@ function getLocation() {
     }
 }
 
-//displaying position in div
-// function showPosition(position) {
-//     x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
-// }
 
 //Displaying position using google maps api
 function showPosition(position) {
     latt = position.coords.latitude; //storing latitude value found using geolocation
     long = position.coords.longitude; //storing longitude value found using geolocation
-
+    geoDecode(latt, long);
     let lattlong = new google.maps.LatLng(latt, long);
     let myOptions = {
         center: lattlong,
@@ -78,6 +76,7 @@ function canvasRemove() {
     document.getElementById('canvas_text').innerText = "Click this button to place the image!"
 }
 
+//Form change color
 function changeColor() {
     let color = document.getElementById("color").value;
     let form  = document.getElementById("html5_form_content");
@@ -97,6 +96,33 @@ function scrollWindow() {
             scrollWindow();
         }, 10);
     }
+};
+
+
+//Geo Decode API
+function geoDecode(lt, lg) {
+
+    let d_url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lt},${lg}&key=AIzaSyCdQGw1TNNpDin36W67zUEi2oxDbA-Udjo`;
+    let city;
+    fetch(d_url)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            let parts = data.results[0].address_components;
+            parts.forEach( part => {
+                if(part.types.includes('locality')){
+                    //Found the city name inside the data
+                    city = part.long_name; //storing city name inside city variable
+                    console.log(city);
+                    document.getElementById('curr_city').innerHTML = `You're currently in <span class="text-light">${city}</span>`;
+                    document.getElementById('curr_work').innerText = `To find work in ${city}, click this button!`;
+                    document.getElementById('curr_but').style.display = "block";
+                }
+            })
+        })
+        .catch(err => console.warn(err.message));
+
+
 };
 
 

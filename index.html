@@ -92,16 +92,20 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="geo-head" style="display: grid; place-items: center">
-                    <h3>Want to see something interesting?</h3>
+                    <h3>Want to find work in your own region?</h3>
                     <h5>We can show you your exact location ;)</h5>
                     <button class="btn btn-outline-dark mt-5" onclick="getLocation()">Click Me!</button>
                 </div>
             </div>
             <div class="col-lg-12 d-flex align-items-center justify-content-center">
-                <div id="demo" style="width: 800px; height: 600px; margin-top: 100px">
-
-                </div>
+                <div id="demo" style="width: 800px; height: 600px; margin-top: 100px"></div>
             </div>
+            <div class="col-lg-12 d-flex flex-column mt-5 justify-content-center align-items-center">
+                <h3 id="curr_city"></h3>
+                <h5 id="curr_work"></h5>
+                <button class="btn btn-outline-light w-25 mt-2" id="curr_but">Find Work</button>
+            </div>
+
         </div>
     </div>
 </section>
